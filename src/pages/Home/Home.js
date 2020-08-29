@@ -29,7 +29,7 @@ const Home = ({navigation}) => {
             
         </View>
         <View style={styles.body}>
-            <TouchableOpacity style={styles.item1}>
+            <TouchableOpacity style={styles.item1} onPress={() => {navigation.navigate('0-3')}}>
                     <Image style={styles.imagem} source={Carrinho}/>
                     <View style={{marginLeft:10}}>
                         <Text style={{color:'#fff', fontSize:18, fontWeight:'bold', marginBottom:10}}>0 - 3 anos</Text>
@@ -38,7 +38,7 @@ const Home = ({navigation}) => {
 
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.item2}>
+            <TouchableOpacity  style={styles.item2}>
                     <Image style={styles.imagem} source={Bebe}/>
                     <View style={{marginLeft:10}}>
                         <Text style={{color:'#fff', fontSize:18, fontWeight:'bold', marginBottom:10}}>3 - 6 anos</Text>
