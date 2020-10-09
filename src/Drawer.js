@@ -1,9 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native'
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Home from './pages/Home/Stack';
+import Home from './Stack';
 import Premium from './pages/premium/index';
-import { color } from 'react-native-reanimated';
+
 
 
 const Drawer = createDrawerNavigator();

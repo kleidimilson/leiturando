@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, FlatList,TouchableOpacity,Text,Image } from 'react-native';
+import { View, StyleSheet,TouchableOpacity,Text,Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 
-import coelho from '../../../assets/coelho.jpg'
-import BrancaNeve from '../../../assets/BrancaNeve.jpg'
+import borboletinha from '../../../assets/borboletinha.png'
+
 
 // import { Container } from './styles';
 
@@ -16,30 +16,23 @@ const Primeiro = ({navigation}) => {
         </TouchableOpacity>
         <Text style={styles.title}>Leiturando</Text>
       </View>
-
       <View style={styles.body}>
         <View style={styles.row}> 
-          <TouchableOpacity style={styles.item}>
-              <Image style={styles.imagem} source={coelho}/>
-              <Text style={styles.textoItem}>O coelho</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.item}>
-              <Image style={styles.imagem} source={BrancaNeve}/>
-              <Text style={styles.textoItem}>Branca de Neve </Text>
-          </TouchableOpacity>
+  
+        
        
         </View>
 
         <View style={styles.row}> 
-          <TouchableOpacity style={styles.item}>
-              <Image style={styles.imagem} source={coelho}/>
+          <TouchableOpacity style={styles.item} onPress={() => {navigation.navigate('borboletinha')}}>
+              <Image style={styles.imagem} source={borboletinha}/>
+              <Text style={styles.textoItem}>Borboetinha</Text>
+          </TouchableOpacity>
+            <TouchableOpacity style={styles.item}>
+              <Image style={styles.imagem} source={borboletinha}/>
               <Text style={styles.textoItem}>O coelho</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.item}>
-              <Image style={styles.imagem} source={BrancaNeve}/>
-              <Text style={styles.textoItem}>Branca de Neve </Text>
-          </TouchableOpacity>
-       
+      
         </View>
         
       </View>
@@ -72,15 +65,19 @@ const styles = StyleSheet.create({
     body: {
       flex:1,
       alignItems:'center',
-      marginTop:50,
-      backgroundColor:'#fff'
+      marginTop:0,
+      backgroundColor:'#48B86D'
     },
     item:{
-        width:170,
-       
-        height:220,
+        width:172,
+        alignContent:'center',
+        alignItems:'center',
+        height:230,
+        paddingTop:20,
         backgroundColor:'#fff',
         margin:20,
+        borderColor:'#FC770E',
+        borderWidth:3,
         borderRadius:10,
         shadowColor: "#000",
         shadowOffset: {
@@ -95,7 +92,8 @@ const styles = StyleSheet.create({
     },
     textoItem: {
       marginLeft:7, 
-      color:'#393737',
+      color:'#FC770E',
+      fontWeight:'bold',
       margin:10
     },
     imagem: {
