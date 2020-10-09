@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, FlatList,TouchableOpacity,Text,Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
-import Imagem from '../../../assets/borboletinha2.jpg'
+import Imagem from '../../../assets/balao2.jpg'
 
 
 
 // import { Container } from './styles';
 
-const Borboletinha = ({navigation}) => {
+const Balao = ({navigation}) => {
   return(
     <View style={styles.container}>
       <View style={styles.header}>
@@ -19,25 +19,19 @@ const Borboletinha = ({navigation}) => {
 
       <View style={styles.body}>
         <Image source={Imagem} style={styles.imagem}/>
-        <Text style={{fontWeight:'bold',fontSize:17,marginTop:30,color:'#FC770E'}}>Borboletinha</Text>
+        <Text style={{fontWeight:'bold',fontSize:17,marginTop:30,color:'#FC770E'}}>Cai, Cai, Balão</Text>
        <Text style={styles.texto}>
-        - Borboletinha tá na cozinha
-        Fazendo chocolate
-        Para a madrinha
-        Poti-poti,perna de pau,olho de vidro e nariz de pica-pau
-        Pau pau
+        - Cai cai balão, cai cai balão
+        Aqui na minha mão
+        Não Cai não, não cai não, não cai não
+        Cai na rua do Sabão
         {'\n\n'}
-        - Borboletão tá no fogão
-        Fazendo macarrão
-        Para o seu irmão
-        Poti-poti,perna de pau,olho de vidro e nariz de pica-pau
-        Pau pau
+        - Cai cai balão, cai cai balão
+        Aqui na minha mão
+        Não Cai não, não cai não, não cai não
+        Cai na rua do Sabão
         {'\n\n'}
-        - Borboletinha tá na cozinha
-        Fazendo chocolate
-        Para a madrinha
-        Poti-poti, perna de pau,olho de vidro e nariz de pica-pau
-        Pau pau
+    
        </Text>
       
         
@@ -75,8 +69,9 @@ const styles = StyleSheet.create({
       backgroundColor:'#fff'
     },
     imagem: {
-      width:500,
-      height:200
+      width:400,
+      height:200,
+        
     },
     texto: {
       color:'#423c3c',
@@ -91,4 +86,4 @@ const styles = StyleSheet.create({
     }
   
 })
-export default Borboletinha;
+export default Balao;

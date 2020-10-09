@@ -1,16 +1,25 @@
 import React from 'react';
 import { View,StyleSheet,TouchableOpacity,Text, Image } from 'react-native';
+import * as Font from 'expo-font';
+import {useFonts} from 'expo-font'
 
 import {Entypo} from '@expo/vector-icons'
 import Carrinho from '../../../assets/carrinho.png'
 import Bebe from '../../../assets/bebe.png'
 import Infantil from '../../../assets/infantil.png'
 import Animacao from '../../../assets/animacao.gif'
+import { Delius_400Regular } from '@expo-google-fonts/delius';
 
 
 
 const Home = ({navigation}) => {
+    const [loaded] = useFonts({
+        DeliusRegular: Delius_400Regular,
+      });
     
+      if (!loaded) {
+        return null;
+      }
     function AbrirMenu() {
         navigation.openDrawer();
     }
@@ -25,7 +34,7 @@ const Home = ({navigation}) => {
             </View>
         <View style={styles.boasVindas}> 
                 <Image style={{width:100,height:100, marginLeft:20}} source={Animacao}/>
-                <Text style={{color:'#fff', marginLeft:30, fontWeight:'bold'}}>Olá Bem vindo!</Text>
+                <Text style={{color:'#fff', marginLeft:30, fontFamily:'DeliusRegular'}}>Olá Bem vindo!</Text>
             
         </View>
         <View style={styles.body}>
@@ -33,7 +42,7 @@ const Home = ({navigation}) => {
                     <Image style={styles.imagem} source={Carrinho}/>
                     <View style={{marginLeft:10}}>
                         <Text style={{color:'#fff', fontSize:18, fontWeight:'bold', marginBottom:10}}>0 - 3 anos</Text>
-                        <Text style={{width:250, color:'#fff', fontSize:14}}> Nesta fase da vida, o papel do mediador é essencial no momento da leitura compartilhada.</Text>
+                        <Text style={{width:250, color:'#fff', fontSize:14, fontFamily:'DeliusRegular'}}> Nesta fase da vida, o papel do mediador é essencial no momento da leitura compartilhada.</Text>
                     </View>
 
             </TouchableOpacity>
@@ -42,7 +51,7 @@ const Home = ({navigation}) => {
                     <Image style={styles.imagem} source={Bebe}/>
                     <View style={{marginLeft:10}}>
                         <Text style={{color:'#fff', fontSize:18, fontWeight:'bold', marginBottom:10}}>3 - 6 anos</Text>
-                        <Text style={{width:250, color:'#fff', fontSize:14}}> Dos 3 aos 6 anos, o  mundo do faz de conta permeia a realidade e os pequenos se ocupam das brincadeiras.</Text>
+                        <Text style={{width:250, color:'#fff', fontSize:14, fontFamily:'DeliusRegular'}}> Dos 3 aos 6 anos, o  mundo do faz de conta permeia a realidade e os pequenos se ocupam das brincadeiras.</Text>
                     </View>
 
             </TouchableOpacity>
@@ -51,7 +60,7 @@ const Home = ({navigation}) => {
                     <Image style={styles.imagem} source={Infantil}/>
                     <View style={{marginLeft:10}}>
                         <Text style={{color:'#fff', fontSize:18, fontWeight:'bold', marginBottom:10}}>6 - 8 anos</Text>
-                        <Text style={{width:250, color:'#fff', fontSize:14}}> Nessa fase,  os pequenos  passam a definir melhor seus gostos e a terem uma visão mais curiosa sobre o mundo .</Text>
+                        <Text style={{width:250, color:'#fff', fontSize:14, fontFamily:'DeliusRegular'}}> Nessa fase,  os pequenos  passam a definir melhor seus gostos e a terem uma visão mais curiosa sobre o mundo .</Text>
                     </View>
 
             </TouchableOpacity>
@@ -78,8 +87,9 @@ const styles = StyleSheet.create({
     title: {
         marginLeft:110,
         color:'#fff',
-        fontWeight:'bold',
+        fontSize:15,
       
+        fontFamily:'DeliusRegular'
     },
     boasVindas: {
         
@@ -102,7 +112,8 @@ const styles = StyleSheet.create({
         width:353,borderRadius:13,
         flexDirection:'row',
         alignItems:'center',
-        marginBottom:20
+        marginBottom:20,
+        fontFamily:'DeliusRegular'
     },
     item2: {
         backgroundColor:'#009B8F',

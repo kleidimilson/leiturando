@@ -1,13 +1,20 @@
 import React from 'react';
 import { View, StyleSheet,TouchableOpacity,Text,Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
-
+import {useFonts} from 'expo-font'
 import borboletinha from '../../../assets/borboletinha.png'
-
-
+import balao from '../../../assets/balao.jpg'
+import { Delius_400Regular } from '@expo-google-fonts/delius';
 // import { Container } from './styles';
 
 const Primeiro = ({navigation}) => {
+  const [loaded] = useFonts({
+    DeliusRegular: Delius_400Regular,
+  });
+
+  if (!loaded) {
+    return null;
+  }
   return(
     <View style={styles.container}>
       <View style={styles.header}>
@@ -26,11 +33,11 @@ const Primeiro = ({navigation}) => {
         <View style={styles.row}> 
           <TouchableOpacity style={styles.item} onPress={() => {navigation.navigate('borboletinha')}}>
               <Image style={styles.imagem} source={borboletinha}/>
-              <Text style={styles.textoItem}>Borboetinha</Text>
+              <Text style={styles.textoItem}>Borboletinha</Text>
           </TouchableOpacity>
-            <TouchableOpacity style={styles.item}>
-              <Image style={styles.imagem} source={borboletinha}/>
-              <Text style={styles.textoItem}>O coelho</Text>
+            <TouchableOpacity style={styles.item} onPress={() => {navigation.navigate('balao')}}>
+              <Image style={styles.imagem} source={balao}/>
+              <Text style={styles.textoItem}>Cai, Cai, Balão</Text>
           </TouchableOpacity>
       
         </View>
@@ -56,7 +63,7 @@ const styles = StyleSheet.create({
      title: {
       marginLeft:110,
       color:'#fff',
-      fontWeight:'bold',
+     fontFamily:'DeliusRegular'
 
     },
     menu: {
@@ -93,11 +100,11 @@ const styles = StyleSheet.create({
     textoItem: {
       marginLeft:7, 
       color:'#FC770E',
-      fontWeight:'bold',
+      fontFamily:'DeliusRegular',
       margin:10
     },
     imagem: {
-      width:170, 
+      width:160, 
       height:160,
       borderTopLeftRadius:10,
       borderTopRightRadius:10
