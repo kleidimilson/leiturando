@@ -47,7 +47,7 @@ const Home = ({navigation}) => {
 
             </TouchableOpacity>
 
-            <TouchableOpacity  style={styles.item2}>
+            <TouchableOpacity  style={styles.item2} onPress={false}>
                     <Image style={styles.imagem} source={Bebe}/>
                     <View style={{marginLeft:10}}>
                         <Text style={{color:'#fff', fontSize:18, fontWeight:'bold', marginBottom:10}}>3 - 6 anos</Text>
